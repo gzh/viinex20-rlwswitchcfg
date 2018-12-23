@@ -1,0 +1,21 @@
+{
+    "objects":
+    [
+        {
+            "type": "renderer",
+            "name": "rend1"
+        },
+        {
+            "type": "renderer",
+            "name": "rend2"
+        }
+    ],
+    "links":
+    [
+        ["rlwswitch0", ["rend1", "rend2"]],
+        ["rend1",["camL1","camR1"]],
+        ["rend2",["camL2","camR2"]],
+        [["web0", "rtspsrv0"], ["rend1","rend2"]]
+    ]
+}
+    

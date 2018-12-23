@@ -1,0 +1,44 @@
+{
+    "objects":
+    [
+        {
+            "type": "script",
+            "name": "rlwswitch0",
+            "load": ["etc/conf.d/rlwswitch.js"],
+            "init": {
+                "pins": {
+                    "left": 0,
+                    "right": 3
+                },
+                "cams": {
+                    "left": [ "camL1", "camL2" ],
+                    "right": [ "camR1", "camR2" ]
+                },
+                "timeout": 10,
+                "imgsize": [640,480]
+            }
+        },
+        {
+            "type": "process",
+            "name": "rlwctl0",
+            "executable": "c:/Program Files (x86)/Viinex14/bin/v20rlwctl.exe",
+            "restart": false,
+            "init": {
+                "host": "127.0.0.1",
+                "rlwctl": "1",
+                "filter": {
+                    "topic": "DigitalInput",
+                    "origin": {
+                        "type": "script",
+                        "name": "rlwswitch0"
+                    }
+                }
+            }
+        }
+    ],
+    "links":
+    [
+        ["rlwswitch0", ["web0", "moxa0", "rlwctl0"]]
+    ]
+}
+    

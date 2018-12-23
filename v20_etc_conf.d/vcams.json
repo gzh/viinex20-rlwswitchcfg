@@ -1,0 +1,24 @@
+{
+    "objects":
+    [
+        {
+            "type": "streamswitch",
+            "name": "vcam1",
+            "default": 0
+        },
+        {
+            "type": "streamswitch",
+            "name": "vcam2",
+            "default": 0
+        }
+    ],
+    "links":
+    [
+        ["rlwswitch0", ["vcam1", "vcam2"]],
+        ["vcam1",["camL1","camR1"]],
+        ["vcam2",["camL2","camR2"]],
+
+        [["web0", "rtspsrv0"], ["vcam1", "vcam2"]]
+    ]
+}
+    

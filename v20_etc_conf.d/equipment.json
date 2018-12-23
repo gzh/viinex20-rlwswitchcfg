@@ -1,0 +1,45 @@
+{
+    "objects":
+    [
+        {
+            "type": "modbus",
+            "name": "moxa0",
+            "host": "192.168.0.105",
+            "inputs": 4
+        },
+
+        {
+            "type": "rtsp",
+            "name": "camL1",
+            "url": "rtsp://192.168.0.71/cam1",
+            "comment auth": ["admin","12345"],
+            "transport":["tcp"]
+        },
+        {
+            "type": "rtsp",
+            "name": "camL2",
+            "url": "rtsp://192.168.0.71/cam2",
+            "comment auth": ["admin","12345"],
+            "transport":["tcp"]
+        },
+        {
+            "type": "rtsp",
+            "name": "camR1",
+            "url": "rtsp://192.168.0.71/rend0",
+            "comment auth": ["admin","12345"],
+            "transport":["tcp"]
+        },
+        {
+            "type": "rtsp",
+            "name": "camR2",
+            "url": "rtsp://192.168.0.71/cam3",
+            "comment auth": ["admin","12345"],
+            "transport":["tcp"]
+        }
+    ],
+    "links":
+    [
+        [["web0", "rtspsrv0"], ["camL1","camL2","camR1","camR2"]]
+    ]
+}
+    

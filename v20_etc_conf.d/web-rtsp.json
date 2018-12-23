@@ -1,0 +1,17 @@
+{
+    "objects":
+    [
+        {
+            "type": "rtspsrv",
+            "name": "rtspsrv0",
+            "port": 1554
+        },
+        {
+            "type": "webserver",
+            "name": "web0",
+            "port": 8880,
+            "staticpath": "share/web"
+        }
+    ]
+}
+    
