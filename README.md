@@ -8,16 +8,22 @@ After the train passes, the script reverts everything as it was before the train
 
 There are two types of virtual video sources in Viinex 2.0: renderers and stream switches. Renderers decode the original video streams, and encode a derivateive stream. It looks well, we can also combine two cameras in the same virtual cam when there is no train (to see the cameras on both the left and right poles). But it consumes a lots of CPU. The stream switches just switch H.264 streams between two or more original video sources. 
 
-There are two parts of config provided for both of these options: the renderers.json and vcams.json respectively. Generally one only need one of them. Just rename the other file (the one which is not needed) into *.json_
+There are two parts of config provided for both of these options: the renderers.json and vcams.json respectively. Generally one only needs one of them. Just rename the other file (the one which is not needed) into *.json_
 
 In Viinex 1.4 configuration, you'll only need two video sources (for top and bottom virtual camera). They should be set to
 
 rtsp://127.0.0.1:1554/vcam1
+
 rtsp://127.0.0.1:1554/vcam2
 
 if stream switches are used, or
 
 rtsp://127.0.0.1:1554/rend1
+
 rtsp://127.0.0.1:1554/rend2
 
 if renderers are used.
+
+You'll need to put the "v20rlwctl.exe" into "Program Files (x64)\Viinex14\bin".
+
+You'll also need to edit the equipment.json in order to adjust IP address of Moxa controller and the RTSP URLs of origin video sources.
