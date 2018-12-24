@@ -4,6 +4,7 @@
         {
             "type": "modbus",
             "name": "moxa0",
+            "protocol": "vkmodules1",
             "host": "192.168.0.105",
             "inputs": 4
         },
