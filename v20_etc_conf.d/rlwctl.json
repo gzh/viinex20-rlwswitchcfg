@@ -10,6 +10,7 @@
                     "left": 0,
                     "right": 3
                 },
+                "invert": false,
                 "cams": {
                     "left": [ "camL1", "camL2" ],
                     "right": [ "camR1", "camR2" ]

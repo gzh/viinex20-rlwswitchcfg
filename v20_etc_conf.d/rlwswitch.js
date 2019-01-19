@@ -47,6 +47,10 @@ function onevent(e){
         return;
     }
 
+    if(config.invert){
+        e.data.state = !e.data.state;
+    }
+    
     var send = false;
     var publish = false;
 
