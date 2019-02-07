@@ -23,7 +23,7 @@
             "type": "process",
             "name": "rlwctl0",
             "executable": "c:/Program Files (x86)/Viinex14/bin/v20rlwctl.exe",
-            "restart": false,
+            "restart": true,
             "init": {
                 "host": "127.0.0.1",
                 "rlwctl": "1",
