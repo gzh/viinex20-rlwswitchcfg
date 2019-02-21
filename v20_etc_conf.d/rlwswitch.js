@@ -171,25 +171,20 @@ function updateRenderers(){
 
 function updateVcams(){
     if(vnx.objects.vcam1 == null || vnx.objects.vcam2 == null){
-        //vnx.log("##################################################vcams not found");
         return;
     }
     if(status.pole == null){
         vnx.objects.vcam1.input(0);
         vnx.objects.vcam2.input(0);
-        //vnx.log("##################################################vcams reset 0 0 ");
     }
     else{
         var input1=-1, input2=-1;
-        //vnx.log("##################################################vcams very before set "+input1+" "+input2);
         var showCams=config.cams[status.pole];
         showCams.forEach(function(cam){
             input1 = Math.max(input1, config.sources1.indexOf(cam));
             input2 = Math.max(input2, config.sources2.indexOf(cam));
         });
-        //vnx.log("##################################################vcams before set "+input1+" "+input2);
         vnx.objects.vcam1.input(input1);
         vnx.objects.vcam2.input(input2);
-        //vnx.log("##################################################vcams set "+input1+" "+input2);
     }
 }
